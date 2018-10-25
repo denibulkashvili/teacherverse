@@ -11,4 +11,3 @@ local_settings.py
 
 .env
 db.sqlite3
-TeacherVerse/__pycache__/settings.cpython-37.pyc
