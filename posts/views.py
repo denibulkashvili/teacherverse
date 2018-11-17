@@ -36,5 +36,13 @@ class UserPosts(generic.ListView):
         context['post_user'] = self.post_user
         return context
 
+class PostDetail(SelectRelatedMixin, generic.DetailView):
+    model = models.Post
+    select_related = ('user', 'group')
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter()
+
 
 
