@@ -59,8 +59,8 @@ class DeletePost(LoginRequiredMixin, SelectRelatedMixin, generic.DeleteView):
     select_related = ('user', 'group')
     success_url = reverse_lazy('posts:all')
 
-    def def get_queryset(self):
-        quertset = super().get_queryset()
+    def get_queryset(self):
+        queryset = super().get_queryset()
         return queryset.filter(user_id = self.request.user.id)
 
     def delete(self, *args, **kwargs):
